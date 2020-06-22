@@ -1,0 +1,66 @@
+const inquirer = require("inquirer");
+const fs = require("fs");
+const util = require("util");
+
+const writeFileAsync = util.promisify(fs.writeFile);
+
+function promptUser() {
+  return inquirer.prompt([
+    {
+      type: "input",
+      name: "badge",
+      message: "Input badge code."
+    },
+    {
+      type: "input",
+      name: "name",
+      message: "What is the project name?"
+    },
+    {
+      type: "input",
+      name: "description",
+      message: "Describe your project."
+    },
+    {
+      type: "input",
+      name: "installation",
+      message: "What are the installation instructions?"
+    },
+    {
+      type: "input",
+      name: "usage",
+      message: "Describe usage."
+    },
+    {
+      type: "checkbox",
+      name: "license",
+      message: "Choose a license."
+      choices: [
+          "MIT License",
+          "Apache License",
+          "GPL License",
+          "Public Domain (Unlicensed)"
+      ]
+    }
+    {
+        type: "input",
+        name: "contributions",
+        message: "What are rules for contributing?"
+      }
+      {
+        type: "input",
+        name: "tests",
+        message: ""
+      }
+      {
+        type: "input",
+        name: "picture",
+        message: "Enter your gitHub profile picture."
+      }
+      {
+        type: "input",
+        name: "email",
+        message: "Enter your gitHub email address."
+      }
+  ]);
+}
