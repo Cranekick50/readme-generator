@@ -136,14 +136,14 @@ inquirer
         console.log("Success!")
     });
 
-    fs.appendFileSync("README.md", ("## How to Run Tests" + '\n' + response.tests) + '\n', function (err) {
+    fs.appendFileSync("README.md", ("## Contact Info" + '\n' + "![alt text](" + response.picture + ")") + '\n', function (err) {
         if (err) {
             return console.log(err);
         }
         console.log("Success!")
     });
 
-    fs.appendFileSync("README.md", ("## How to Run Tests" + '\n' + response.tests) + '\n', function (err) {
+    fs.appendFileSync("README.md", ('\n' + response.email) + '\n', function (err) {
         if (err) {
             return console.log(err);
         }
