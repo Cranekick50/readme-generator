@@ -54,7 +54,7 @@ let questions = [
       {
         type: "input",
         name: "tests",
-        message: ""
+        message: "Run tests here."
       },
       {
         type: "input",
@@ -129,5 +129,23 @@ inquirer
         console.log("Success!")
     });
 
-    
+    fs.appendFileSync("README.md", ("## How to Run Tests" + '\n' + response.tests) + '\n', function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!")
+    });
+
+    fs.appendFileSync("README.md", ("## How to Run Tests" + '\n' + response.tests) + '\n', function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!")
+    });
+
+    fs.appendFileSync("README.md", ("## How to Run Tests" + '\n' + response.tests) + '\n', function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!")
     });
