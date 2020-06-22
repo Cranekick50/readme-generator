@@ -72,6 +72,13 @@ console.clear();
 inquirer
     .prompt(questions).then(response => {
     
+    fs.appendFileSync("README.md", ('\n' + response.badge) + '\n', function(err) { 
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!");
+    });
+
     fs.appendFileSync("README.md", ("# " + response.name) + '\n', function(err) { 
         if (err) {
             return console.log(err);
@@ -79,5 +86,33 @@ inquirer
         console.log("Success!");
     });
 
+    fs.appendFileSync("README.md", ("## Description" + '\n' + response.description) + '\n', function(err) { 
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!");
+    });
+
+    fs.appendFileSync("README.md", ("## Table of Contents" + '\n' + '- ' +response.toc.split(", ").
+    join('\n' + '- ')) + '\n', function(err) { 
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!");
+    });
+
+    fs.appendFileSync("README.md", ("# " + '\n' + response.description) + '\n', function(err) { 
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!");
+    });
+
+    fs.appendFileSync("README.md", ("# " + '\n' + response.description) + '\n', function(err) { 
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!");
+    });
 
     });
