@@ -122,5 +122,12 @@ inquirer
         console.log("Success!")
     });
 
+    fs.appendFileSync("README.md", ("## How to Contribute" + '\n' + response.contributing) + '\n', function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!")
+    });
 
+    
     });
