@@ -101,18 +101,19 @@ inquirer
         console.log("Success!");
     });
 
-    fs.appendFileSync("README.md", ("# " + '\n' + response.description) + '\n', function(err) { 
+    fs.appendFileSync("README.md", ("## Installation Instructions" + '\n' + response.installation) + '\n', function(err) { 
         if (err) {
             return console.log(err);
         }
         console.log("Success!");
     });
 
-    fs.appendFileSync("README.md", ("# " + '\n' + response.description) + '\n', function(err) { 
+    fs.appendFileSync("README.md", ("## Usage" + '\n' + response.usage) + '\n', function(err) { 
         if (err) {
             return console.log(err);
         }
         console.log("Success!");
     });
 
+    fs.appendFileSync("README.md", (""))
     });
