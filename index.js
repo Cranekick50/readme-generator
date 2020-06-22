@@ -115,5 +115,12 @@ inquirer
         console.log("Success!");
     });
 
-    fs.appendFileSync("README.md", (""))
+    fs.appendFileSync("README.md", ("## License" + '\n' + response.license) + '\n', function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!")
+    });
+
+
     });
