@@ -4,8 +4,7 @@ const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-function promptUser() {
-  return inquirer.prompt([
+let questions = [
     {
       type: "input",
       name: "badge",
@@ -22,6 +21,11 @@ function promptUser() {
       message: "Describe your project."
     },
     {
+        type: "input",
+        name: "toc",
+        message: "List your table of contents, separated by commas."
+      },
+    {
       type: "input",
       name: "installation",
       message: "What are the installation instructions?"
@@ -34,33 +38,46 @@ function promptUser() {
     {
       type: "checkbox",
       name: "license",
-      message: "Choose a license."
+      message: "Choose a license.",
       choices: [
           "MIT License",
           "Apache License",
           "GPL License",
           "Public Domain (Unlicensed)"
       ]
-    }
+    },
     {
         type: "input",
         name: "contributions",
         message: "What are rules for contributing?"
-      }
+      },
       {
         type: "input",
         name: "tests",
         message: ""
-      }
+      },
       {
         type: "input",
         name: "picture",
         message: "Enter your gitHub profile picture."
-      }
+      },
       {
         type: "input",
         name: "email",
         message: "Enter your gitHub email address."
-      }
-  ]);
-}
+      },
+  ]
+console.clear();
+
+inquirer
+    .prompt(questions).then(response => {
+    
+    fs.appendFileSync("README.md", ("# " + response.name) + '\n', function(err) { 
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!");
+    });
+
+
+    });
