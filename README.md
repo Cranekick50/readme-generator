@@ -1,17 +1,24 @@
-
-
 # Readme Generator
 ## Description
-CLI Readme Generator, which creates a Readme.md based on the answers to the questions.
+Questionaire that automatically builds out a Readme.md file.
 ## Table of Contents
 - Description
-- Installation Instructions
+- Installation
 - Usage
-- Contributions
+- Licensing
+- Contact Information
 ## Installation Instructions
-NPM install, NPM install inquirer, open terminal and type "node index.js" and you will be prompted questions.  Answer the questions in full.
+npm install, npm install inquirer
 ## Usage
-After typing "node index.js" in terminal, you will be prompted multiple questions.  Once the user answers all the questions, the answers are appended to a Readme template.
+type "node index.js" in the terminal.  Answer the questions asked.  A readme file will be created once complete.
+## License
+Public Domain (Unlicensed)
+## How to Contribute
+undefined
+## How to Run Tests
+
+## Contact Info
+![alt text](https://avatars2.githubusercontent.com/u/61070610?s=460&u=1fb7aa4701c43958f8b5a13c5bcc1656e68fc006&v=4)
 
 
-
+michael.srithapin@gmail.com

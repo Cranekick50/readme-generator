@@ -5,16 +5,21 @@ const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 
 let questions = [
-  {
-    type: "input",
-    name: "badge",
-    message: "Input badge code.",
-  },
-  {
-    type: "input",
-    name: "name",
-    message: "What is the project name?",
-  },
+    {
+        type: "input",
+        name: "username",
+        message: "GitHub Username:",
+      },
+      {
+        type: "input",
+        name: "repoName",
+        message: "Repository Name:",
+      },
+      {
+        type: "input",
+        name: "name",
+        message: "What is the Project Name?",
+      },
   {
     type: "input",
     name: "description",
@@ -71,12 +76,7 @@ let questions = [
 console.clear();
 
 inquirer.prompt(questions).then((response) => {
-  fs.appendFileSync("README.md", "\n" + response.badge + "\n", function (err) {
-    if (err) {
-      return console.log(err);
-    }
-    console.log("Success!");
-  });
+    `![GitHub top language](https://img.shields.io/github/languages/top/${response.username}/${response.repoName})`;
 
   fs.appendFileSync("README.md", "# " + response.name + "\n", function (err) {
     if (err) {
